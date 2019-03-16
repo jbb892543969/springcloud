@@ -1,0 +1,16 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: cloud-base
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql//192.168.2.2:3306/tensquare_base?characterEncoding=utf-8
+    username: root
+    password: root
+
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: false

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jbb.base.dao.mybatis.LabelMapper">
+    <select id="findSearch" resultType="com.jbb.base.entity.Label" parameterType="com.jbb.base.entity.Label">
+        select * from tb_label
+        <where>
+            <if test="labelname != null and labelname != ''">
+                labelname like concat("%",#{labelname},"%")
+            </if>
+        </where>
+    </select>
+</mapper>

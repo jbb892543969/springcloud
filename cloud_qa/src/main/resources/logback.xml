@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                <![CDATA[%date{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan([%c{0}-%line]) %red([%mdc{requestId:-0}]) - <%m>%n]]></pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.jbb.recruit.dao" level="debug"/>
+    <logger name="org.hibernate.SQL" level="debug"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="trace"/>
+
+    <root level="info">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

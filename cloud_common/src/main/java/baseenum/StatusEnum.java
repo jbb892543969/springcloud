@@ -18,11 +18,30 @@ public enum StatusEnum {
     /** 服务调用失败状态码 */
     REMOTERROR(20004,"服务调用失败"),
     /** 操作重复状态码 */
-    REERROR(20005,"重复操作");
+    REERROR(20005, "重复操作"),
+    /**
+     * 异常状态码
+     */
+    INNERERROR(20006, "服务器内部代码错误");
     private Integer code;
     private String desc;
     private StatusEnum(Integer code,String desc) {
         this.code = code;
         this.desc = desc;
     }
-}
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }}

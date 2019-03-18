@@ -10,6 +10,9 @@
     <modules>
         <module>cloud_common</module>
         <module>cloud_base</module>
+        <module>cloud_recruit</module>
+        <module>cloud_qa</module>
+        <module>cloud_spit</module>
     </modules>
     <packaging>pom</packaging>
 

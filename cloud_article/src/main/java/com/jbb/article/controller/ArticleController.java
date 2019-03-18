@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 控制器层
  *
- * @author Administrator
+ * @author jbb
  */
 @RestController
 @CrossOrigin

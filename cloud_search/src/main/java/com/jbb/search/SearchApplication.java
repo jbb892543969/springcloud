@@ -1,4 +1,4 @@
-package com.jbb.spit;
+package com.jbb.search;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2019/3/18
  */
 @SpringBootApplication
-public class SpitApplication {
+public class SearchApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpitApplication.class, args);
+        SpringApplication.run(SearchApplication.class, args);
     }
 }

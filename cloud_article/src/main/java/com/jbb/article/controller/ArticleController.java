@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 @CrossOrigin
 @RequestMapping("/article")
 public class ArticleController extends BaseController {
-
     @Autowired
     private ArticleService articleService;
     @Autowired

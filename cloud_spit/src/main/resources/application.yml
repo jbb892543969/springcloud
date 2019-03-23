@@ -3,9 +3,16 @@ server:
 spring:
   application:
     name: cloud-spit
-    data:
-  mongodb:
-    host: 192.168.2.2
-    database: spitdb
+  data:
+    mongodb:
+      host: 192.168.2.2
+      database: spitdb
   redis:
     host: 102.168.2.2
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true

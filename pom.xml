@@ -13,6 +13,11 @@
         <module>cloud_recruit</module>
         <module>cloud_qa</module>
         <module>cloud_spit</module>
+        <module>cloud_search</module>
+        <module>cloud_article</module>
+        <module>cloud_user</module>
+        <module>cloud_gathering</module>
+        <module>cloud_eureka</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -30,6 +35,18 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>

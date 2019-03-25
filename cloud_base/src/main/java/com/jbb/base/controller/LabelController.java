@@ -6,6 +6,7 @@ import com.jbb.base.service.LabelService;
 import controller.BaseController;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +22,8 @@ import java.util.List;
 public class LabelController extends BaseController {
     @Autowired
     private LabelService labelService;
-
+    @Value("${server.port}")
+    private Integer port;
     /**
      * 查询标签列表
      *
@@ -40,6 +42,7 @@ public class LabelController extends BaseController {
      */
     @GetMapping("/{id}")
     public Result<Label> findById(@PathVariable String id) {
+        System.out.println(port);
         return new Result<>(true, StatusEnum.SUCCESS.getCode(), "查询成功", labelService.findById(id));
     }
 

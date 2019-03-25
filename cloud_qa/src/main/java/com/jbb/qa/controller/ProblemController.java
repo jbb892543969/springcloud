@@ -1,6 +1,7 @@
 package com.jbb.qa.controller;
 
 import baseenum.StatusEnum;
+import com.jbb.qa.client.LableClient;
 import com.jbb.qa.pojo.Problem;
 import com.jbb.qa.service.ProblemService;
 import controller.BaseController;
@@ -24,6 +25,9 @@ public class ProblemController extends BaseController {
 
     @Autowired
     private ProblemService problemService;
+
+    @Autowired
+    private LableClient lableClient;
 
 
     /**
@@ -144,5 +148,10 @@ public class ProblemController extends BaseController {
         Page<Problem> pageList = problemService.findWaitListByLabelId(labelid, page, size);
         PageResult<Problem> pageResult = new PageResult<>(pageList.getTotalElements(), pageList.getContent());
         return new Result(true, StatusEnum.SUCCESS.getCode(), "查询成功", pageResult);
+    }
+
+    @GetMapping("/label/{labelId}")
+    public Result findLabelById(@PathVariable String labelId) {
+        return lableClient.findById(labelId);
     }
 }

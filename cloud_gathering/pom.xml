@@ -9,7 +9,7 @@
     <artifactId>cloud_gathering</artifactId>
 
     <name>cloud_gathering</name>
-    <description>招聘功能</description>
+    <description>活动功能</description>
 
     <dependencies>
         <dependency>

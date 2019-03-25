@@ -1,0 +1,39 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: cloud-manager
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes: ##路由网关 path为url路径 serviceId为跳转服务
+    cloud-gathering:  ##活动
+      path: /gathering/**
+      serviceId: cloud-gathering
+    cloud-article:  ##文章
+      path: /article/**
+      serviceId: cloud-article
+    cloud-base:  ##基础
+      path: /base/**
+      serviceId: cloud-base
+    cloud-qa:  ##问答
+      path: /qa/**
+      serviceId: cloud-qa
+    cloud-recruit:  ##招聘
+      path: /recruit/**
+      serviceId: cloud-gathering
+    cloud-spit:  ##吐槽
+      path: /spit/**
+      serviceId: cloud-spit
+    cloud-user:  ##用户
+      path: /user/**
+      serviceId: cloud-user
+
+jwt:
+  config:
+    key: itcast
+    ttl: 360000

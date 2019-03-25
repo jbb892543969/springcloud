@@ -18,6 +18,7 @@
         <module>cloud_user</module>
         <module>cloud_gathering</module>
         <module>cloud_eureka</module>
+        <module>cloud_manager</module>
     </modules>
     <packaging>pom</packaging>
 

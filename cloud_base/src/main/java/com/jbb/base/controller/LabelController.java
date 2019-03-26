@@ -24,6 +24,13 @@ public class LabelController extends BaseController {
     private LabelService labelService;
     @Value("${server.port}")
     private Integer port;
+    @Value("${test}")
+    private String test;
+
+    @GetMapping("test")
+    public String test() {
+        return test;
+    }
     /**
      * 查询标签列表
      *

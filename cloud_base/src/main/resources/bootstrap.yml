@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: cloud-base
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:10001
+      name: base
+server:
+  port: 9999

@@ -26,5 +26,4 @@ eureka:
       defaultZone: http://localhost:6868/eureka
   instance:
     prefer-ip-address: true
-jbb:
-  test: jbb
+test: jbb

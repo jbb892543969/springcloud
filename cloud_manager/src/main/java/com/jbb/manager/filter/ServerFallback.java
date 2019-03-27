@@ -39,7 +39,7 @@ public class ServerFallback implements FallbackProvider {
 
             @Override
             public InputStream getBody() throws IOException {
-                Result result = new Result(false, StatusEnum.REMOTERROR.getCode(), "服务调用失败");
+                Result result = new Result(false, StatusEnum.REMOTERROR.getCode(), cause.getMessage());
                 ObjectMapper mapper = new ObjectMapper();
                 String json = mapper.writeValueAsString(result);
                 return new ByteArrayInputStream(json.getBytes("UTF-8"));

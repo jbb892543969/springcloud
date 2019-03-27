@@ -10,3 +10,21 @@ spring:
           uri: https://github.com/jbbzbq/springcloud.git
           search-paths: /config
           default-label: master
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.2.2
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true

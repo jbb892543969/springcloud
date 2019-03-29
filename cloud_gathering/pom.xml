@@ -38,6 +38,7 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
     <properties>
         <docker.image.name>cloud-gathering</docker.image.name>
     </properties>

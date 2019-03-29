@@ -30,6 +30,7 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
     <properties>
         <docker.image.name>cloud-config</docker.image.name>
     </properties>

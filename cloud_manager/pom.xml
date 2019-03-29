@@ -42,6 +42,7 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
     <properties>
         <docker.image.name>cloud-manager</docker.image.name>
     </properties>

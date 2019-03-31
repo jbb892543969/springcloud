@@ -8,7 +8,7 @@ spring:
       host: 192.168.2.2
       database: spitdb
   redis:
-    host: 102.168.2.2
+    host: 192.168.2.2
 
 eureka:
   client:

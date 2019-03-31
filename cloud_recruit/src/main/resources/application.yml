@@ -5,7 +5,7 @@ spring:
     name: cloud-recruit
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.2.2:3306/tensquare_recruit?characterEncoding=UTF8
+    url: jdbc:mysql://192.168.2.2:3306/cloud_recruit?characterEncoding=UTF8
     username: root
     password: root
   jpa:

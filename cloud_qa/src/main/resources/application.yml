@@ -5,7 +5,7 @@ spring:
     name: cloud-qa
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.2.2:3306/tensquare_qa?useUnicode=true&amp;characterEncoding=UTF8
+    url: jdbc:mysql://192.168.2.2:3306/cloud_qa?useUnicode=true&amp;characterEncoding=UTF8
     username: root
     password: root
   jpa:

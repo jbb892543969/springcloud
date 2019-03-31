@@ -6,7 +6,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.2.2:3306/tensquare_base?characterEncoding=utf-8
+    url: jdbc:mysql://192.168.2.2:3306/cloud_base?characterEncoding=utf-8
     username: root
     password: root
 
@@ -23,7 +23,7 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:6868/eureka
+      defaultZone: http://192.168.2.2:6868/eureka
   instance:
     prefer-ip-address: true
 test: jbb123456

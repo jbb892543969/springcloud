@@ -6,12 +6,32 @@
                 <![CDATA[%date{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan([%c{0}-%line]) %red([%mdc{requestId:-0}]) - <%m>%n]]></pattern>
         </encoder>
     </appender>
-
+    <appender name="AMQP"
+              class="org.springframework.amqp.rabbit.logback.AmqpAppender">
+        <host>192.168.2.2</host>
+        <port>5672</port>
+        <username>guest</username>
+        <password>guest</password>
+        <applicationId>cloud_user</applicationId>
+        <routingKeyPattern>logstash</routingKeyPattern>
+        <declareExchange>true</declareExchange>
+        <exchangeType>direct</exchangeType>
+        <exchangeName>ex_logstash</exchangeName>
+        <generateId>true</generateId>
+        <charset>UTF-8</charset>
+        <durable>true</durable>
+        <deliveryMode>PERSISTENT</deliveryMode>
+        <encoder>
+            <pattern>
+                <![CDATA[%date{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan([%c{0}-%line]) %red([%mdc{requestId:-0}]) - <%m>%n]]></pattern>
+        </encoder>
+    </appender>
     <logger name="com.jbb.recruit.dao" level="debug"/>
     <logger name="org.hibernate.SQL" level="debug"/>
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="trace"/>
 
     <root level="info">
         <appender-ref ref="console"/>
+        <appender-ref ref="AMQP"/>
     </root>
 </configuration>

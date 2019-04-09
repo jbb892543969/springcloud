@@ -54,7 +54,7 @@ public class SpitService extends BaseService {
      * @param spit
      */
     public void add(Spit spit) {
-        spit.set_id(idWorker.nextId() + "");
+        spit.setId(idWorker.nextId() + "");
         spit.setPublishtime(new Date());//发布日期
         spit.setVisits(0);//浏览量
         spit.setShare(0);//分享数

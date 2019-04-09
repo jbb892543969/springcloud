@@ -10,5 +10,11 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @author Administrator
  */
 public interface AdminDao extends JpaRepository<Admin, String>, JpaSpecificationExecutor<Admin> {
-    public Admin findByLoginname(String loginname);
+    /**
+     * 根据用户名查管理员
+     *
+     * @param loginname 用户名
+     * @return
+     */
+    Admin findByLoginname(String loginname);
 }

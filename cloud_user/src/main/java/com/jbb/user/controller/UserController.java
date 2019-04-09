@@ -151,7 +151,7 @@ public class UserController extends BaseController {
                 userService.findByMobileAndPassword(param.getMobile(), param.getPassword());
         if (user != null) {
             String token = jwtUtil.createJWT(user.getId(), user.getNickname(), "user");
-            Map map = new HashMap();
+            Map map = new HashMap(5);
             map.put("token", token);
             map.put("name", user.getNickname());//昵称
             map.put("avatar", user.getAvatar());//头像

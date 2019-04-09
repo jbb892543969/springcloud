@@ -190,7 +190,7 @@ public class UserService extends BaseService {
         redisTemplate.opsForValue().set("smscode_" + mobile, code + "", 5,
                 TimeUnit.MINUTES);//五分钟过期
         //3.将验证码和手机号发动到rabbitMQ中
-        Map<String, String> map = new HashMap();
+        Map<String, String> map = new HashMap(3);
         map.put("mobile", mobile);
         map.put("code", code + "");
         rabbitTemplate.convertAndSend("exchage.cloud", "smsKey", map);

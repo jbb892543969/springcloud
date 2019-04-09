@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @FeignClient(name = "cloud-base", fallback = LabelFallbackFactory.class)
 public interface LableClient {
+    /**
+     * 根据标签ID返回标签信息
+     *
+     * @param id 标签ID
+     * @return entity.Result
+     */
     @GetMapping("/label/{id}")
     public Result findById(@PathVariable String id);
 }

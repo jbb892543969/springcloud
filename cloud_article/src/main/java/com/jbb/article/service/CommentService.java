@@ -19,7 +19,7 @@ public class CommentService extends BaseService {
     private CommentDao commentDao;
 
     public void add(Comment comment) {
-        comment.set_id(idWorker.nextId() + "");
+        comment.setId(idWorker.nextId() + "");
         commentDao.save(comment);
     }
 

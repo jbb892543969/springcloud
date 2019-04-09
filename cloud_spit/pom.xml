@@ -38,34 +38,36 @@
         </dependency>
     </dependencies>
 
+    <properties>
+        <docker.image.name>cloud-spit</docker.image.name>
+    </properties>
+
     <build>
-        <finalName>cloud-spit</finalName>
         <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.10</version>
+                <!--放开这块注释，则运行mvn deploy命令就会打包镜像<executions>-->
+                <!--                <executions>-->
+                <!--                    <execution>-->
+                <!--                        <id>default</id>-->
+                <!--                        <goals>-->
+                <!--                            <goal>build</goal>-->
+                <!--                            <goal>push</goal>-->
+                <!--                        </goals>-->
+                <!--                    </execution>-->
+                <!--                </executions>-->
+                <configuration>
+                    <repository>${docker.image.name}</repository>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <!-- docker的maven插件，官网：
-            https://github.com/spotify/docker-maven-plugin -->
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.13</version>
-                <configuration>
-                    <imageName>192.168.2.2:5000/${project.artifactId}:${project.version}
-                    </imageName>
-                    <baseImage>jdk1.8</baseImage>
-                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}
-                            </directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                    <dockerHost>http://192.168.2.2:2375</dockerHost>
-                </configuration>
             </plugin>
         </plugins>
     </build>

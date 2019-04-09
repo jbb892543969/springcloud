@@ -7,6 +7,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import utils.JwtUtil;
 
+/**
+ * 启动类
+ *
+ * @author jbb
+ * @date 2019/3/16
+ */
 @SpringBootApplication
 @EnableRabbit
 @EnableEurekaClient

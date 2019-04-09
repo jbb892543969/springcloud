@@ -9,6 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 文章搜索Controller
+ *
+ * @author jbb
+ * @date 2019/3/16
+ */
 @RestController
 @CrossOrigin
 @RequestMapping("/article")

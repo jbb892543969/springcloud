@@ -16,6 +16,12 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
+/**
+ * 启动类
+ *
+ * @author jbb
+ * @date 2019/3/16
+ */
 @SpringBootApplication
 @EnableCaching
 @EnableEurekaClient

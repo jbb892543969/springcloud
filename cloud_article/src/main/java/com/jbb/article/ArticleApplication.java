@@ -10,6 +10,12 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+/**
+ * 启动类
+ *
+ * @author jbb
+ * @date 2019/3/16
+ */
 @SpringBootApplication
 @EnableEurekaClient
 public class ArticleApplication {

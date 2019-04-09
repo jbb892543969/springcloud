@@ -11,6 +11,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 吐槽Controller
+ *
+ * @author jbb
+ * @date 2019/3/16
+ */
 @RestController
 @CrossOrigin
 @RequestMapping("/spit")
@@ -61,7 +67,7 @@ public class SpitController extends BaseController {
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public Result update(@RequestBody Spit spit, @PathVariable String id) {
-        spit.set_id(id);
+        spit.setId(id);
         spitService.update(spit);
         return new Result(true, StatusEnum.SUCCESS.getCode(), "修改成功");
     }

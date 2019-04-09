@@ -6,7 +6,6 @@ import com.jbb.user.service.AdminService;
 import controller.BaseController;
 import entity.PageResult;
 import entity.Result;
-import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -101,27 +100,13 @@ public class AdminController extends BaseController {
     }
 
     /**
-     * 删除
      *
-     * @param id
+     * @param null
+     * @return
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Result delete(@PathVariable String id, HttpServletRequest request) {
-        String authHeader = request.getHeader("Authorization");//获取头信息
-        if (authHeader == null) {
-            return new Result(false, StatusEnum.ACCESSERROR.getCode(), "权限不足");
-        }
-        if (!authHeader.startsWith("Bearer ")) {
-            return new Result(false, StatusEnum.ACCESSERROR.getCode(), "权限不足");
-        }
-        String token = authHeader.substring(7);//提取token
-        Claims claims = jwtUtil.parseJWT(token);
-        if (claims == null) {
-            return new Result(false, StatusEnum.ACCESSERROR.getCode(), "权限不足");
-        }
-        if (!"admin".equals(claims.get("roles"))) {
-            return new Result(false, StatusEnum.ACCESSERROR.getCode(), "权限不足");
-        }
+
         adminService.deleteById(id);
         return new Result(true, StatusEnum.SUCCESS.getCode(), "删除成功");
     }

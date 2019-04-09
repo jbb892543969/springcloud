@@ -6,6 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
+/**
+ * 配置类
+ *
+ * @author jbb
+ * @date 2019/3/16
+ */
 @Configuration
 public class ApplicationConfig extends WebMvcConfigurationSupport {
     @Autowired

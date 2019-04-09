@@ -8,10 +8,16 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Date;
 
+/**
+ * JWT工具类
+ *
+ * @author jbb
+ * @date 2019/3/16
+ */
 @ConfigurationProperties("jwt.config")
 public class JwtUtil {
     private String key;
-    private long ttl;//一个小时
+    private long ttl;
 
     public String getKey() {
         return key;

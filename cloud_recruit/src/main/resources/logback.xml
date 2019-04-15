@@ -12,7 +12,7 @@
         <port>5672</port>
         <username>guest</username>
         <password>guest</password>
-        <applicationId>cloud_user</applicationId>
+        <applicationId>cloud_recruit</applicationId>
         <routingKeyPattern>logstash</routingKeyPattern>
         <declareExchange>true</declareExchange>
         <exchangeType>direct</exchangeType>
